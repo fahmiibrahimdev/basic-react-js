@@ -1,0 +1,21 @@
+Version 1.1
+
+in ./src/App.js
+
+import "./css/style.css";
+
+function App() {
+  //
+  const klikSaya = (name) => {
+    alert("Nama saya: " + name);
+  };
+
+  return (
+    <div>
+      <button onClick={() => klikSaya("Fahmi Ibrahim")}>Klik Saya</button>
+    </div>
+  );
+}
+
+export default App;
+

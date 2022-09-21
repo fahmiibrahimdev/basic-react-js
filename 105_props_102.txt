@@ -1,0 +1,53 @@
+In ./src/App.js
+
+import "./css/style.css";
+import { useState } from "react";
+import DaftarBuku from "./components/DaftarBuku";
+
+function App() {
+  //
+  const [buku, setBuku] = useState([
+    { id: 1, judul: "Buku Tilawah", harga: 22000 },
+    { id: 2, judul: "Buku Kimia", harga: 55000 },
+    { id: 3, judul: "Buku Fisika", harga: 45000 },
+    { id: 4, judul: "Buku Dongeng", harga: 30000 },
+    { id: 5, judul: "Buku Doa Nabi", harga: 78000 },
+  ]);
+
+  const hapusBuku = (bukuId) => {
+    const bukuBaru = buku.filter((data) => data.id !== bukuId);
+    setBuku(bukuBaru);
+  };
+
+  return (
+    <div>
+      <DaftarBuku buku={buku} hapusBuku={hapusBuku} />
+    </div>
+  );
+}
+
+export default App;
+
+In ./src/components/DaftarBuku.js
+
+const DaftarBuku = ({ buku, hapusBuku }) => {
+  return (
+    <div>
+      <ul>
+        {buku.map((data) => (
+          <li key={data.id}>
+            {data.judul} - {data.harga}
+            <button
+              className="px-4 py-3 bg-gray-50 rounded-lg mt-3 shadow-sm shadow-black ml-3"
+              onClick={() => hapusBuku(data.id)}
+            >
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default DaftarBuku;

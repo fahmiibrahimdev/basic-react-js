@@ -1,0 +1,44 @@
+V1.0
+
+In ./src/App.js
+
+import "./css/style.css";
+import { useState } from "react";
+import DaftarBuku from "./components/DaftarBuku";
+
+function App() {
+  //
+  const [buku, setBuku] = useState([
+    { id: 1, judul: "Buku Tilawah", harga: 22000 },
+    { id: 2, judul: "Buku Kimia", harga: 55000 },
+    { id: 3, judul: "Buku Fisika", harga: 45000 },
+    { id: 4, judul: "Buku Dongeng", harga: 30000 },
+    { id: 5, judul: "Buku Doa Nabi", harga: 78000 },
+  ]);
+
+  return (
+    <div>
+      <DaftarBuku buku={buku} />
+    </div>
+  );
+}
+
+export default App;
+
+In ./src/components/DaftarBuku.js
+
+const DaftarBuku = ({ buku }) => {
+  return (
+    <div>
+      <ul>
+        {buku.map((data) => (
+          <li key={data.id}>
+            {data.judul} - {data.harga}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default DaftarBuku;

@@ -1,0 +1,9 @@
+{
+  "buku": [
+    { "id": 1, "judul": "Buku Tilawah", "harga": 22000 },
+    { "id": 2, "judul": "Buku Kimia", "harga": 55000 },
+    { "id": 3, "judul": "Buku Fisika", "harga": 45000 },
+    { "id": 4, "judul": "Buku Dongeng", "harga": 30000 },
+    { "id": 5, "judul": "Buku Doa Nabi", "harga": 78000 }
+  ]
+}

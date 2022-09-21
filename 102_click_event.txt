@@ -1,0 +1,20 @@
+Version 1.1
+
+in ./src/App.js
+
+import "./css/style.css";
+
+function App() {
+  //
+  const klikSaya = () => {
+    alert("HELLO WORLD!");
+  };
+
+  return (
+    <div>
+      <button onClick={klikSaya}>Klik Saya</button>
+    </div>
+  );
+}
+
+export default App;

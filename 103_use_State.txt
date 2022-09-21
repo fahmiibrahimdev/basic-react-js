@@ -1,0 +1,22 @@
+In ./src/App.js
+
+import "./css/style.css";
+import { useState } from "react";
+
+function App() {
+  //
+  const [judul, setJudul] = useState("Hello World");
+
+  const ubahJudul = () => {
+    setJudul("Judul telah diubah");
+  };
+
+  return (
+    <div>
+      <h1>{judul}</h1>
+      <button onClick={ubahJudul}>Ubah Judul</button>
+    </div>
+  );
+}
+
+export default App;
